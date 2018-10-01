@@ -3,7 +3,10 @@
     <mheader></mheader>
     <menuList></menuList>
     <div class="content-box">
-      <router-view></router-view>
+      <tag></tag>
+      <keep-alive :include="tagList">
+        <router-view></router-view>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -11,10 +14,16 @@
 <script>
 import mheader from '../components/common/header'
 import menuList from '../components/common/menu'
+import tag from '../components/common/tag'
+import { mapGetters } from 'vuex'
 export default {
+  computed: {
+    ...mapGetters(['tagList'])
+  },
   components: {
     mheader,
-    menuList
+    menuList,
+    tag
   }
 }
 </script>
@@ -28,12 +37,11 @@ export default {
   padding-top: 70px;
 }
 .content-box {
-  width: 100%;
   height: 100%;
   /* background-color: pink; */
   position: absolute;
   left: 250px;
-  right: 0;
+  right: 10px;
   top: 70px;
   bottom: 0;
 }

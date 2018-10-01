@@ -19,10 +19,12 @@ const router = new Router({
       component: (resolve) => {
         require(['../views/admin'], resolve)
       },
+      redirect: 'admin/adminIndex',
       children: [
         {
           path: 'adminIndex',
           name: 'adminIndex',
+          meta: {title: '系统首页'},
           component: (resolve) => {
             require(['../views/pages/adminIndex'], resolve)
           }
@@ -30,6 +32,7 @@ const router = new Router({
         {
           path: 'table',
           name: 'table',
+          meta: {title: '基础表格'},
           component: (resolve) => {
             require(['../views/pages/table'], resolve)
           }
@@ -37,6 +40,7 @@ const router = new Router({
         {
           path: 'form',
           name: 'form',
+          meta: {title: '基础表单'},
           component: (resolve) => {
             require(['../views/pages/form'], resolve)
           }
@@ -44,6 +48,7 @@ const router = new Router({
         {
           path: 'linkage',
           name: 'linkage',
+          meta: {title: '三级联动'},
           component: (resolve) => {
             require(['../views/pages/linkage'], resolve)
           }
@@ -51,6 +56,7 @@ const router = new Router({
         {
           path: 'upload',
           name: 'upload',
+          meta: {title: '文件上传'},
           component: (resolve) => {
             require(['../views/pages/upload'], resolve)
           }
@@ -58,6 +64,7 @@ const router = new Router({
         {
           path: 'excel',
           name: 'excel',
+          meta: {title: '导出excel'},
           component: (resolve) => {
             require(['../views/pages/excel'], resolve)
           }
@@ -65,6 +72,7 @@ const router = new Router({
         {
           path: 'editor',
           name: 'editor',
+          meta: {title: '富文本编辑'},
           component: (resolve) => {
             require(['../views/pages/editor'], resolve)
           }
@@ -72,6 +80,7 @@ const router = new Router({
         {
           path: 'icon',
           name: 'icon',
+          meta: {title: '自定义图标'},
           component: (resolve) => {
             require(['../views/pages/icon'], resolve)
           }
@@ -79,6 +88,7 @@ const router = new Router({
         {
           path: 'charts',
           name: 'charts',
+          meta: {title: 'charts图标'},
           component: (resolve) => {
             require(['../views/pages/charts'], resolve)
           }
@@ -86,6 +96,7 @@ const router = new Router({
         {
           path: 'drag',
           name: 'drag',
+          meta: {title: '拖拽列表'},
           component: (resolve) => {
             require(['../views/pages/drag'], resolve)
           }
@@ -93,6 +104,7 @@ const router = new Router({
         {
           path: 'permission',
           name: 'permission',
+          meta: {title: '权限测试'},
           component: (resolve) => {
             require(['../views/pages/permission'], resolve)
           }

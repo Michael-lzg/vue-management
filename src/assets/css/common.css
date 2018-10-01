@@ -113,8 +113,11 @@ html, body, #app{
 :-ms-input-placeholder {
   color: #878D99;
 }
-.fc-4990E2 {
-  color: #4990E2 !important;
+.c1 {
+  color: #409EFF !important;
+}
+.bg1{
+  background-color: #409EFF !important;
 }
 
 
