@@ -1,168 +1,141 @@
 <template>
-    <div class="tags" v-if="showTags">
-        <ul>
-            <li class="tags-li" v-for="(item,index) in tagsList" :class="{'active': isActive(item.path)}" :key="index">
-                <router-link :to="item.path" class="tags-li-title">
-                    {{item.title}}
-                </router-link>
-                <span class="tags-li-icon" @click="closeTags(index)"><i class="el-icon-close"></i></span>
-            </li>
-        </ul>
-        <div class="tags-close-box">
-            <el-dropdown @command="handleTags">
-                <el-button size="mini" type="primary">
-                    标签选项<i class="el-icon-arrow-down el-icon--right"></i>
-                </el-button>
-                <el-dropdown-menu size="small" slot="dropdown">
-                    <el-dropdown-item command="other">关闭其他</el-dropdown-item>
-                    <el-dropdown-item command="all">关闭所有</el-dropdown-item>
-                </el-dropdown-menu>
-            </el-dropdown>
+    <div>
+        <div class="crumbs">
+            <el-breadcrumb separator="/">
+                <el-breadcrumb-item><i class="el-icon-lx-calendar"></i> 表单</el-breadcrumb-item>
+                <el-breadcrumb-item>图片上传</el-breadcrumb-item>
+            </el-breadcrumb>
+        </div>
+        <div class="container">
+            <div class="content-title">支持拖拽</div>
+            <div class="plugins-tips">
+                Element UI自带上传组件。
+                访问地址：<a href="http://element.eleme.io/#/zh-CN/component/upload" target="_blank">Element UI Upload</a>
+            </div>
+            <el-upload
+                class="upload-demo"
+                drag
+                action="/api/posts/"
+                multiple>
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+            </el-upload>
+            <div class="content-title">支持裁剪</div>
+            <div class="plugins-tips">
+                vue-cropperjs：一个封装了 cropperjs 的 Vue 组件。
+                访问地址：<a href="https://github.com/Agontuk/vue-cropperjs" target="_blank">vue-cropperjs</a>
+            </div>
+            <div class="crop-demo">
+                <img :src="cropImg" class="pre-img">
+                <div class="crop-demo-btn">选择图片
+                    <input class="crop-input" type="file" name="image" accept="image/*" @change="setImage"/>
+                </div>
+            </div>
+
+            <el-dialog title="裁剪图片" :visible.sync="dialogVisible" width="30%">
+                <vue-cropper ref='cropper' :src="imgSrc" :ready="cropImage" :zoom="cropImage" :cropmove="cropImage" style="width:100%;height:300px;"></vue-cropper>
+                <span slot="footer" class="dialog-footer">
+                    <el-button @click="cancelCrop">取 消</el-button>
+                    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+                </span>
+            </el-dialog>
         </div>
     </div>
 </template>
 
 <script>
-import bus from './bus'
+import VueCropper from 'vue-cropperjs'
 export default {
-  data () {
+  name: 'upload',
+  data: function () {
     return {
-      tagsList: []
+      defaultSrc: './static/img/img.jpg',
+      fileList: [],
+      imgSrc: '',
+      cropImg: '',
+      dialogVisible: false
     }
+  },
+  components: {
+    VueCropper
   },
   methods: {
-    isActive (path) {
-      return path === this.$route.fullPath
-    },
-    // 关闭单个标签
-    closeTags (index) {
-      const delItem = this.tagsList.splice(index, 1)[0]
-      const item = this.tagsList[index] ? this.tagsList[index] : this.tagsList[index - 1]
-      if (item) {
-        delItem.path === this.$route.fullPath && this.$router.push(item.path)
-      } else {
-        this.$router.push('/')
+    setImage (e) {
+      const file = e.target.files[0]
+      if (!file.type.includes('image/')) {
+        return
       }
-    },
-    // 关闭全部标签
-    closeAll () {
-      this.tagsList = []
-      this.$router.push('/')
-    },
-    // 关闭其他标签
-    closeOther () {
-      const curItem = this.tagsList.filter(item => {
-        return item.path === this.$route.fullPath
-      })
-      this.tagsList = curItem
-    },
-    // 设置标签
-    setTags (route) {
-      const isExist = this.tagsList.some(item => {
-        return item.path === route.fullPath
-      })
-      if (!isExist) {
-        if (this.tagsList.length >= 8) {
-          this.tagsList.shift()
-        }
-        this.tagsList.push({
-          title: route.meta.title,
-          path: route.fullPath,
-          name: route.matched[1].components.default.name
-        })
+      const reader = new FileReader()
+      reader.onload = (event) => {
+        this.dialogVisible = true
+        this.imgSrc = event.target.result
+        this.$refs.cropper && this.$refs.cropper.replace(event.target.result)
       }
-      bus.$emit('tags', this.tagsList)
+      reader.readAsDataURL(file)
     },
-    handleTags (command) {
-      command === 'other' ? this.closeOther() : this.closeAll()
-    }
-  },
-  computed: {
-    showTags () {
-      return this.tagsList.length > 0
-    }
-  },
-  watch: {
-    $route (newValue, oldValue) {
-      this.setTags(newValue)
+    cropImage () {
+      this.cropImg = this.$refs.cropper.getCroppedCanvas().toDataURL()
+    },
+    cancelCrop () {
+      this.dialogVisible = false
+      this.cropImg = this.defaultSrc
+    },
+    imageuploaded (res) {
+      console.log(res)
+    },
+    handleError () {
+      this.$notify.error({
+        title: '上传失败',
+        message: '图片上传接口上传失败，可更改为自己的服务器接口'
+      })
     }
   },
   created () {
-    this.setTags(this.$route)
+    this.cropImg = this.defaultSrc
   }
 }
-
 </script>
 
-<style>
-    .tags {
-        position: relative;
-        height: 30px;
-        overflow: hidden;
-        background: #fff;
-        padding-right: 120px;
-        box-shadow: 0 5px 10px #ddd;
+<style scoped>
+    .content-title{
+        font-weight: 400;
+        line-height: 50px;
+        margin: 10px 0;
+        font-size: 22px;
+        color: #1f2f3d;
     }
-
-    .tags ul {
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-    }
-
-    .tags-li {
-        float: left;
-        margin: 3px 5px 2px 3px;
-        border-radius: 3px;
-        font-size: 12px;
-        overflow: hidden;
-        cursor: pointer;
-        height: 23px;
-        line-height: 23px;
-        border: 1px solid #e9eaec;
-        background: #fff;
-        padding: 0 5px 0 12px;
-        vertical-align: middle;
-        color: #666;
-        -webkit-transition: all .3s ease-in;
-        -moz-transition: all .3s ease-in;
-        transition: all .3s ease-in;
-    }
-
-    .tags-li:not(.active):hover {
+    .pre-img{
+        width: 100px;
+        height: 100px;
         background: #f8f8f8;
+        border: 1px solid #eee;
+        border-radius: 5px;
     }
-
-    .tags-li.active {
+    .crop-demo{
+        display: flex;
+        align-items: flex-end;
+    }
+    .crop-demo-btn{
+        position: relative;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-left: 30px;
+        background-color: #409eff;
         color: #fff;
-    }
-
-    .tags-li-title {
-        float: left;
-        max-width: 80px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        margin-right: 5px;
-        color: #666;
-    }
-
-    .tags-li.active .tags-li-title {
-        color: #fff;
-    }
-
-    .tags-close-box {
-        position: absolute;
-        right: 0;
-        top: 0;
+        font-size: 14px;
+        border-radius: 4px;
         box-sizing: border-box;
-        padding-top: 1px;
-        text-align: center;
-        width: 110px;
-        height: 30px;
-        background: #fff;
-        box-shadow: -3px 0 15px 3px rgba(0, 0, 0, .1);
-        z-index: 10;
     }
-
+    .crop-input{
+        position: absolute;
+        width: 100px;
+        height: 40px;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        cursor: pointer;
+    }
 </style>
