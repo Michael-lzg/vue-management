@@ -32,6 +32,7 @@ export default {
       imgSrc: ''
     }
   },
+  name: 'upload',
   components: { VueCropper },
   methods: {
     setImage (e) {
@@ -64,9 +65,9 @@ export default {
 <style scoped>
 .tips {
   padding: 15px 0;
-  background-color: #ddd;
+  /* background-color: #ddd; */
   margin: 10px 0;
-  text-indent: 15px;
+  /* text-indent: 15px; */
 }
 .crop-demo-btn {
   position: relative;

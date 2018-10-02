@@ -24,6 +24,9 @@ export default {
     mheader,
     menuList,
     tag
+  },
+  created () {
+    console.log(this.tagList)
   }
 }
 </script>

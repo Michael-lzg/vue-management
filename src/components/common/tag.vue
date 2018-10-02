@@ -64,7 +64,8 @@ export default {
       if (!isActiveRouter) {
         this.tagList.push({
           title: route.meta.title,
-          path: route.fullPath
+          path: route.fullPath,
+          name: route.matched[1].name
         })
         this.$store.commit('updateTagList', this.tagList)
       }
