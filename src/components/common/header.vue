@@ -70,8 +70,9 @@ export default {
     },
     handleCommand (command) {
       if (command === 'loginout') {
-        this.$router.push('/login')
+        this.$router.push('/')
       }
+      sessionStorage.removeItem('isLogin')
     }
   }
 }
