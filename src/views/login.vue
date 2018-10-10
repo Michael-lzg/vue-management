@@ -6,10 +6,12 @@
         <i class="el-icon-edit"></i>
         <input type="text" v-model="name">
       </div>
+      <div class="item colRed">{{tsName}}</div>
       <div class="password item">
         <i class="el-icon-view"></i>
         <input type="password" v-model="password">
       </div>
+      <div class="item colRed">{{tsPassword}}</div>
       <div class="btn">
         <el-button type="primary" @click="toLogin">登录</el-button>
       </div>
@@ -32,11 +34,11 @@ export default {
       var a1 = this.util.isUser(this.name)
       var a2 = this.util.isPassword(this.password)
       if (a1 !== 1) {
-        alert(a1)
+        this.tsName = a1
         return
       }
       if (a2 !== 1) {
-        alert(a2)
+        this.tsPassword = a2
         return
       }
       this.$router.push({
@@ -67,10 +69,11 @@ export default {
   }
   .item{
     height: 32px;
+    line-height: 32px;
     background-color: #ddd;
     padding-left: 45px;
     position: relative;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
     border-radius: 4px;
     >i{
      width: 45px;
@@ -92,5 +95,8 @@ export default {
 .el-button--primary{
   width: 100%;
   height: 100%;
+}
+.colRed{
+  color: red;
 }
 </style>
