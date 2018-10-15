@@ -62,6 +62,7 @@ export default {
   padding: 30px;
   background-color: #ddd;
   margin: 0 auto;
+  border-radius: 4px;
   .top{
     font-size: 20px;
     text-align: center;

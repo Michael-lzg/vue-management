@@ -108,6 +108,14 @@ const router = new Router({
           component: (resolve) => {
             require(['../views/pages/permission'], resolve)
           }
+        },
+        {
+          path: 'preview',
+          name: 'preview',
+          meta: {title: '图片预览'},
+          component: (resolve) => {
+            require(['../views/pages/preview'], resolve)
+          }
         }
       ]
     },

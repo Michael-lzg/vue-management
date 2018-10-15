@@ -70,6 +70,18 @@ export default {
           ]
         },
         {
+          icon: 'el-icon-message',
+          index: '4',
+          showSubs: false,
+          title: '插件相关',
+          subs: [
+            {
+              index: 'preview',
+              title: '图片预览'
+            }
+          ]
+        },
+        {
           icon: 'el-icon-setting',
           index: 'icon',
           title: '自定义图标'
