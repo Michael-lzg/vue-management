@@ -47,5 +47,6 @@ export default {
   right: 10px;
   top: 70px;
   bottom: 0;
+  overflow: auto;
 }
 </style>
