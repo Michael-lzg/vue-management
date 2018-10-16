@@ -6,6 +6,7 @@ icon
 
 <script>
 export default {
+  name: 'icon'
 
 }
 </script>

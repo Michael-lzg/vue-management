@@ -4,7 +4,7 @@
     <menuList></menuList>
     <div class="content-box">
       <tag></tag>
-      <keep-alive :include="tagList">
+      <keep-alive :include="cachList">
         <router-view></router-view>
       </keep-alive>
     </div>
@@ -17,6 +17,11 @@ import menuList from '../components/common/menu'
 import tag from '../components/common/tag'
 import { mapGetters } from 'vuex'
 export default {
+  data () {
+    return {
+      cachList: ''
+    }
+  },
   computed: {
     ...mapGetters(['tagList'])
   },
@@ -25,8 +30,18 @@ export default {
     menuList,
     tag
   },
+  watch: {
+    tagList (val) {
+      var arr = []
+      for (var i in val) {
+        arr.push(val[i].name)
+      }
+      this.cachList = arr.join(',')
+      console.log(this.cachList)
+    }
+  },
   created () {
-    console.log(this.tagList)
+    // console.log(this.tagList)
   }
 }
 </script>

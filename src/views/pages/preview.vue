@@ -31,6 +31,7 @@ var options = {
 }
 Vue.use(preview, options)
 export default {
+  name: 'preview',
   data () {
     return {
       imgList: [

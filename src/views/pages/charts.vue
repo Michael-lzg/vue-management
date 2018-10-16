@@ -26,6 +26,7 @@
 <script>
 import Schart from 'vue-schart'
 export default {
+  name: 'charts',
   data () {
     return {
       data1: [

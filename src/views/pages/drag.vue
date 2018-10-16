@@ -6,6 +6,7 @@ drag
 
 <script>
 export default {
+  name: 'drag'
 
 }
 </script>

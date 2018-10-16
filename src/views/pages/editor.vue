@@ -17,6 +17,7 @@ import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import { quillEditor } from 'vue-quill-editor'
 export default {
+  name: 'editor',
   data () {
     return {
       content: '',

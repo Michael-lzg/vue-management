@@ -6,7 +6,7 @@ linkage
 
 <script>
 export default {
-
+  name: 'linkage'
 }
 </script>
 

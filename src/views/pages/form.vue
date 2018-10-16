@@ -53,6 +53,7 @@
 
 <script>
 export default {
+  name: 'formList',
   data () {
     return {
       inline: true,
