@@ -116,6 +116,14 @@ const router = new Router({
           component: (resolve) => {
             require(['../views/pages/preview'], resolve)
           }
+        },
+        {
+          path: 'swiper',
+          name: 'swiper',
+          meta: {title: '图片特效'},
+          component: (resolve) => {
+            require(['../views/pages/swiper'], resolve)
+          }
         }
       ]
     },

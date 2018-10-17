@@ -78,6 +78,10 @@ export default {
             {
               index: 'preview',
               title: '图片预览'
+            },
+            {
+              index: 'swiper',
+              title: '图片特效'
             }
           ]
         },
