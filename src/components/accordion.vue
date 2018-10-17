@@ -2,7 +2,7 @@
   <div>
     <ul class="imgBox">
       <li class="item" :class="{'activeImg':index===activeIndex}" v-for="(item,index) in imgList" :key="index" @mouseover="changeIndex(index)">
-        <img :src="item.src" alt="" height="300" width="400">
+        <img :src="item.src" alt="" height="225" width="300">
       </li>
     </ul>
   </div>
@@ -32,20 +32,20 @@ export default {
 
 <style scoped lang="scss">
 .imgBox{
-  width: 1200px;
+  width: 900px;
   overflow: hidden;
 }
 .item{
-  width: 200px;
-  height: 300px;
+  width: 150px;
+  height: 225px;
   overflow: hidden;
   float: left;
   >img{
-    width: 400px !important;
+    width: 300px !important;
   }
 }
 .activeImg{
-  width: 400px !important;
+  width: 300px !important;
   transition: all 0.3s;
   animation: changeImg 0.2s linear;
 }
@@ -54,7 +54,7 @@ export default {
     width: 200px;
   }
   100%{
-    width: 400px !important;
+    width: 300px !important;
   }
 }
 </style>
