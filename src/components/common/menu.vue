@@ -42,7 +42,7 @@ export default {
           title: '基础表格'
         },
         {
-          icon: 'el-icon-message',
+          icon: 'icon-yingyongguanli iconfont',
           index: '3',
           showSubs: false,
           title: '表单相关',
@@ -86,17 +86,17 @@ export default {
           ]
         },
         {
-          icon: 'el-icon-setting',
+          icon: 'icon-icon_shiyongwendang iconfont',
           index: 'icon',
           title: '自定义图标'
         },
         {
-          icon: 'el-icon-setting',
+          icon: 'icon-biaoge iconfont',
           index: 'charts',
           title: 'schart图表'
         },
         {
-          icon: 'el-icon-picture-outline',
+          icon: 'icon-ketuozhuai iconfont',
           index: 'drag',
           title: '拖拽列表'
         },
@@ -139,11 +139,19 @@ export default {
 .menu {
   width: 240px;
   height: 100%;
-  overflow-Y: auto;
+  overflow-y: auto;
   background-color: rgb(50, 65, 87);
   position: relative;
 }
 .menu::-webkit-scrollbar {
   display: none;
+}
+.iconfont {
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 18px;
+  display: inline-block;
 }
 </style>

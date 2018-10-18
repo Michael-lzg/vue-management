@@ -3,12 +3,12 @@
     <div class="box">
       <div class="top">系统登录</div>
       <div class="name item">
-        <i class="el-icon-edit"></i>
+        <i class="iconfont icon-user"></i>
         <input type="text" v-model="name">
       </div>
       <div class="item colRed">{{tsName}}</div>
       <div class="password item">
-        <i class="el-icon-view"></i>
+        <i class="iconfont icon-icon_yulan"></i>
         <input type="password" v-model="password">
       </div>
       <div class="item colRed">{{tsPassword}}</div>
@@ -84,6 +84,7 @@ export default {
      text-align: center;
      left: 0;
      background-color: #f6f6f6;
+     font-size: 22px;
     }
     >input{
       height: 32px;
