@@ -3,6 +3,9 @@
     <div class="tips">vue-grid-layout：一个可拖拽和缩放的 Vue.js 表格布局。 访问地址：
       <a href="https://github.com/jbaysolutions/vue-grid-layout" target="_blank" class="c1">vue-grid-layout</a>
     </div>
+    <div class="tips">vddl：利用 HTML5 的拖拽 API 实现修改列表的 Vue 组件。 访问地址：
+      <a href="https://www.awesomes.cn/repo/hejianxian/vddl" target="_blank" class="c1">vddl</a>
+    </div>
   </div>
 </template>
 
