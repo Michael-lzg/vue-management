@@ -124,6 +124,14 @@ const router = new Router({
           component: (resolve) => {
             require(['../views/pages/swiper'], resolve)
           }
+        },
+        {
+          path: 'demo',
+          name: 'demo',
+          meta: {title: '优秀项目效'},
+          component: (resolve) => {
+            require(['../views/pages/demo'], resolve)
+          }
         }
       ]
     },

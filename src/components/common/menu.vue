@@ -101,6 +101,11 @@ export default {
           title: '拖拽列表'
         },
         {
+          icon: 'icon-meh iconfont',
+          index: 'demo',
+          title: '优秀项目'
+        },
+        {
           icon: 'el-icon-circle-close-outline',
           index: '6',
           title: '错误处理',

@@ -120,5 +120,9 @@ html, body, #app{
   background-color: #409EFF !important;
 }
 
+.tip{
+  padding: 5px 0;
+}
+
 
 

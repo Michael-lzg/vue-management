@@ -65,9 +65,7 @@ export default {
 <style scoped>
 .tips {
   padding: 15px 0;
-  /* background-color: #ddd; */
   margin: 10px 0;
-  /* text-indent: 15px; */
 }
 .crop-demo-btn {
   position: relative;
