@@ -1,23 +1,53 @@
 <template>
   <div>
     <div class="tips">导出excel需要安装两个依赖包file-saver xlsx， script-loader
-      <el-button type="primary" class="fr" @click="downExcel">导出Excel</el-button>
+      <el-button type="primary" size='mini' class="" @click="downExcel">导出Excel</el-button>
     </div>
     <div class="tableList">
-      <el-table ref="multipleTable" :data="list" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="55">
+      <el-table :data="list" tooltip-effect="light" style="width: 100%;">
+        <el-table-column prop="number" type="index" label="序号" show-overflow-tooltip>
         </el-table-column>
-        <el-table-column label="序号" width="55">
-          <template slot-scope="scope">{{ scope.row.id }}</template>
+        <el-table-column prop="title" label="文章标题" show-overflow-tooltip width="270">
+          <template slot-scope="scope">
+            <span>{{scope.row.title}}</span>
+          </template>
         </el-table-column>
-        <el-table-column label="标题" show-overflow-tooltip>
-          <template slot-scope="scope">{{ scope.row.title }}</template>
+        <el-table-column prop="date" label="发表时间" width="120">
+          <template slot-scope="scope">
+            <span>{{scope.row.date}}</span>
+          </template>
         </el-table-column>
-        <el-table-column label="作者">
-          <template slot-scope="scope">{{ scope.row.name }}</template>
+        <el-table-column prop="name" label="作者" show-overflow-tooltip width="80">
+          <template slot-scope="scope">
+            <span>{{scope.row.name}}</span>
+          </template>
         </el-table-column>
-        <el-table-column label="时间">
-          <template slot-scope="scope">{{ scope.row.time }}</template>
+        <el-table-column prop="name" label="地址" show-overflow-tooltip width="180">
+          <template slot-scope="scope">
+            <span>{{scope.row.address}}</span>
+          </template>
+        </el-table-column>
+        <el-table-column prop="zans" label="评级" width="150">
+          <template slot-scope="scope">
+            <el-rate v-model="scope.row.zans" disable dshow-scoretext-color="#ff9900" score-template="{value}"></el-rate>
+          </template>
+        </el-table-column>
+        <el-table-column prop="nums" label="点赞数" show-overflow-tooltip width="80">
+          <template slot-scope="scope">
+            <span>{{scope.row.nums}}</span>
+          </template>
+        </el-table-column>
+        <el-table-column prop="name" label="状态" width="100">
+          <template slot-scope="scope">
+            <el-tag type="success" v-if="scope.row.isDraft">发表</el-tag>
+            <el-tag type="info" v-if="!scope.row.isDraft">草稿</el-tag>
+          </template>
+        </el-table-column>
+        <el-table-column label="操作">
+          <template slot-scope="scope">
+            <span class="todoBtn">编辑</span>
+            <span class="todoBtn">删除</span>
+          </template>
         </el-table-column>
       </el-table>
     </div>
@@ -33,13 +63,20 @@ export default {
   },
   name: 'excel',
   methods: {
+    getList () {
+      this.axios.post('http://test123.com', {})
+        .then((res) => {
+          console.log(res)
+          this.list = res.list
+        })
+    },
     handleSelectionChange (val) {
       console.log(val)
     },
     downExcel () {
       import('../../vendor/Export2Excel.js').then(excel => {
-        const tHeader = ['序号', '标题', '作者', '时间']
-        const filterVal = ['id', 'title', 'name', 'time']
+        const tHeader = ['序号', '标题', '作者', '时间', '地址', '评级', '点赞数', '状态']
+        const filterVal = ['index', 'title', 'name', 'date', 'address', 'zans', 'nums', 'isDraft']
         const list = this.list
         const data = this.formatJson(filterVal, list)
         excel.export_json_to_excel({
@@ -61,26 +98,21 @@ export default {
     }
   },
   created () {
-    for (var i = 0; i < 10; i++) {
-      this.list.push({
-        id: i + 1,
-        title: '这是一个标题哈哈哈哈或或或或或或或或或或',
-        name: '张三',
-        time: '2018-09-30'
-      })
-    }
+    this.getList()
   }
 }
 </script>
 
 <style scoped>
 .tips {
-  padding: 15px 0;
-  /* background-color: #ddd; */
-  margin: 10px 0;
-  text-indent: 15px;
+  padding: 10px 0;
 }
 .el-button{
   margin-top: -10px;
+}
+</style>
+<style>
+.el-table th, .el-table td{
+  padding: 10px 0 !important;
 }
 </style>

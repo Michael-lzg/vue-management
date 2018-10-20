@@ -9,12 +9,13 @@ import store from './vuex/index'
 import utils from './javascript/utils'
 import api from './javascript/api'
 import {get, post, put, del} from './javascript/fetch'
+import './javascript/mock'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import './assets/css/element-variables.scss'
 
-Vue.prototype.$http = {get, post, put, del}
+Vue.prototype.axios = {get, post, put, del}
 Vue.use(utils)
 Vue.use(api)
 Vue.use(ElementUI)

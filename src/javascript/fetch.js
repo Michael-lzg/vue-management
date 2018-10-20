@@ -1,5 +1,5 @@
 import axios from 'axios'
-import vm from '../main'
+// import vm from '../main'
 
 // const PRODUCT_URL = window.location.host.indexOf('www.mhealth100.com') > -1 ? 'https://www.mhealth100.com' : 'http://' + window.location.host
 const PRODUCT_URL = 'https://test3.mhealth100.com'
@@ -17,10 +17,10 @@ axios.interceptors.request.use((config) => {
 
 axios.interceptors.response.use((res) => {
   if (res.data.resultCode !== 20000) {
-    vm.$message({
-      message: res.data.resultDesc,
-      type: 'warning'
-    })
+    // vm.$message({
+    //   message: res.data.resultDesc,
+    //   type: 'warning'
+    // })
     // return Promise.reject(res)
   }
   return res
