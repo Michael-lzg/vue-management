@@ -20,11 +20,13 @@
     <div class="tips">v-uploader：一个支持拖拽上传和多文件上传的 Vue2 上传组件。 访问地址：
       <a href="https://www.awesomes.cn/repo/TerryZ/v-uploader" target="_blank" class="c1">v-uploader</a>
     </div>
+    <Vuploader></Vuploader>
   </div>
 </template>
 
 <script>
 import VueCropper from 'vue-cropperjs'
+import Vuploader from '../../components/v-uploader'
 export default {
   data () {
     return {
@@ -35,7 +37,7 @@ export default {
     }
   },
   name: 'upload',
-  components: { VueCropper },
+  components: { VueCropper, Vuploader },
   methods: {
     setImage (e) {
       const file = e.target.files[0]

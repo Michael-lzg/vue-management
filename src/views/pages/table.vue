@@ -63,7 +63,6 @@ export default {
   data () {
     return {
       list: [],
-      img: '',
       total: 45,
       currentPage: 1
     }
@@ -74,7 +73,6 @@ export default {
         .then((res) => {
           console.log(res)
           this.list = res.list
-          this.img = this.list[0].img
         })
     },
     getTableHeight () {
