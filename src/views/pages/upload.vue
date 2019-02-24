@@ -17,6 +17,7 @@
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>
+
     <div class="tips">v-uploader：一个支持拖拽上传和多文件上传的 Vue2 上传组件。 访问地址：
       <a href="https://www.awesomes.cn/repo/TerryZ/v-uploader" target="_blank" class="c1">v-uploader</a>
     </div>

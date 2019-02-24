@@ -11,7 +11,7 @@ const uploaderConfig = {
   uploadFileUrl: 'https://jsonplaceholder.typicode.com/posts/',
   deleteFileUrl: 'https://jsonplaceholder.typicode.com/posts/',
   showMessage: (message) => {
-    alert(message)
+    alert(JSON.stringify(message))
   }
 }
 Vue.use(vUploader, uploaderConfig)
