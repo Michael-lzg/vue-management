@@ -41,26 +41,42 @@
           <span>优秀开源项目</span>
         </div>
         <div class="tip">
-          <a href="https://www.awesomes.cn/repo/zdy1988/vue-jstree" target="_blank" class="c1">vue-jstree</a>：Vue2.0+ 的树形结构插件
+          <a href="http://es6.ruanyifeng.com/#README" target="_blank">ECMAScript 6 入门, 全面介绍 ECMAScript 6 新引入的语法特性。</a>
         </div>
         <div class="tip">
-          <a href="https://www.awesomes.cn/repo/scalia/vuejs-tree" target="_blank" class="c1">vuejs-tree</a>：高度可配置的急速的 Vue 树形视图
+          <a href="https://juejin.im/post/5bfe003f5188252bf829c3fb" target="_blank">细解JavaScript ES7 ES8 ES9 新特性</a>
         </div>
         <div class="tip">
-          <a href="https://www.awesomes.cn/repo/MingSeng-W/vue-bloom-menu" target="_blank" class="c1">vue-bloom-menu</a>：基于 Vue 的弧形菜单弹出组件
+          <a href="https://juejin.im/post/5bd16676f265da0ae677820d" target="_blank">前端优化常用技术心得,从建立http连接开始，到页面展示到浏览器里，经历了加载、执行、渲染，重构的几个阶段</a>
         </div>
         <div class="tip">
-          <a href="https://www.awesomes.cn/repo/jaweii/vueg" target="_blank" class="c1">vueg</a>：为 webApp 提供转场特效的开源 Vue 插件
+          <a href="https://juejin.im/post/5b9f176b6fb9a05d3827d03f" target="_blank">this（他喵的）到底是什么 — 理解 JavaScript 中的 this、call、apply 和 bind</a>
         </div>
         <div class="tip">
-          <a href="https://www.awesomes.cn/repo/alvarotrigo/vue-fullpage-js" target="_blank" class="c1">vue-fullpage.js</a>：针对 Vue.js 的官方 fullPage.js 包装库
+          <a href="https://github.com/chen-yulun/vue2-elm" target="_blank">基于 vue2 + vuex 构建一个具有 45 个页面的大型单页面应用</a>
         </div>
         <div class="tip">
-          <a href="https://www.awesomes.cn/repo/waynecz/vue-img-inputer" target="_blank" class="c1">vue-img-inputer</a>：基于 Vue2 的图片输入框，用于图片预览、拖拽、回填，主题可选，高度可定制
+          <a href="https://juejin.im/post/5bd66efcf265da0a8a6af2d2" target="_blank">webpack4.x最详细入门讲解</a>
         </div>
         <div class="tip">
-          <a href="https://www.awesomes.cn/repo/xLogic92/vue-picture-preview" target="_blank" class="c1">vue-picture-preview</a>：移动端 Vue.js 图片预览插件
+          <a href="https://www.webpackjs.com/concepts/" target="_blank">webpack中文网</a>
         </div>
+        <div class="tip">
+          <a href="https://react.docschina.org/" target="_blank">React中文网</a>
+        </div>
+        <div class="tip">
+          <a href="https://developers.weixin.qq.com/miniprogram/dev/api/" target="_blank">微信小程序开发</a>
+        </div>
+        <div class="tip">
+          <a href="https://antv.alipay.com/zh-cn/f2/3.x/" target="_blank">F2 移动端可视化方案</a>
+        </div>
+        <div class="tip">
+          <a href="https://echarts.baidu.com/index.html" target="_blank">ECharts官网</a>
+        </div>
+        <div class="tip">
+          <a href="https://youzan.github.io/vant-weapp/#/intro" target="_blank">Vant移动端UI组件库</a>
+        </div>
+
       </el-card>
     </div>
   </div>
