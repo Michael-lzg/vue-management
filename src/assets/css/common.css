@@ -100,7 +100,9 @@ html, body, #app{
 .c4{
   color: #40A9FF !important;
 }
-
+.c8{
+  color:#888 !important;
+}
 ::-webkit-input-placeholder {
   color: #878D99;
 }
