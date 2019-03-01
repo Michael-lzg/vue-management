@@ -76,7 +76,18 @@
         <div class="tip">
           <a href="https://youzan.github.io/vant-weapp/#/intro" target="_blank">Vant移动端UI组件库</a>
         </div>
-
+        <div class="tip">
+          <a href="https://github.com/iview/iview-admin" target="_blank">iview-admin管理后台</a>
+        </div>
+        <div class="tip">
+          <a href="https://www.awesomes.cn/subject/vue" target="_blank">Vue专题开源项目</a>
+        </div>
+        <div class="tip">
+          <a href="https://caniuse.com/#feat=picture-in-picture" target="_blank">查看前端兼容性</a>
+        </div>
+        <div class="tip">
+          <a href="https://juejin.im/post/5ba7d5dd5188255c6140cc9d" target="_blank">前端常用插件、工具类库汇总</a>
+        </div>
       </el-card>
     </div>
   </div>

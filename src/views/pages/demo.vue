@@ -10,9 +10,13 @@
     </div>
     <div class="tip"><a href="https://www.awesomes.cn/repo/alvarotrigo/vue-fullpage-js" target="_blank" class="c1">vue-fullpage.js</a>：针对 Vue.js 的官方 fullPage.js 包装库
     </div>
+    <div class="tip"><a href="http://www.dowebok.com/demo/2014/77/" target="_blank" class="c1">fullpage.js</a>：jQuery全屏滚动插件fullPage.js演示
+    </div>
     <div class="tip"><a href="https://www.awesomes.cn/repo/waynecz/vue-img-inputer" target="_blank" class="c1">vue-img-inputer</a>：基于 Vue2 的图片输入框，用于图片预览、拖拽、回填，主题可选，高度可定制
     </div>
     <div class="tip"><a href="https://www.awesomes.cn/repo/xLogic92/vue-picture-preview" target="_blank" class="c1">vue-picture-preview</a>：移动端 Vue.js 图片预览插件
+    </div>
+    <div class="tip"><a href="https://juejin.im/post/5ba7d5dd5188255c6140cc9d" target="_blank" class="c1">Animate.css</a>：CSS3 动画库，也是目前最通用的动画库。
     </div>
   </div>
 </template>
