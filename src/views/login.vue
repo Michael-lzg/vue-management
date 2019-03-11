@@ -23,8 +23,8 @@
 export default {
   data () {
     return {
-      name: '',
-      password: '',
+      name: 'admin',
+      password: 'aaa123',
       tsName: '',
       tsPassword: ''
     }

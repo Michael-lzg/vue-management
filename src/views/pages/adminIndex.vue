@@ -6,7 +6,7 @@
           <img src="../../assets/img/admin.jpg" alt="" width="120">
         </div>
         <div class="info">
-          <div class="name">michael</div>
+          <div class="name">admin</div>
           <div class="job c8">web前端开发</div>
           <div class="tag">
             <el-tag>Vue</el-tag>
