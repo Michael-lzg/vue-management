@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // const PRODUCT_URL = window.location.host.indexOf('www.mhealth100.com') > -1 ? 'https://www.mhealth100.com' : 'http://' + window.location.host
 const PRODUCT_URL = 'https://test3.mhealth100.com'
-const MOCK_URL = 'http://10.0.1.49:8288/mwp/managementPlatform'
+const MOCK_URL = 'https:baidu.com'
 axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? PRODUCT_URL : MOCK_URL
 
 axios.interceptors.request.use((config) => {
