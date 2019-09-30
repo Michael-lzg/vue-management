@@ -15,7 +15,7 @@
           </div>
         </div>
       </div>
-      <div class="left-bot-block">
+      <div class="left-mid-block">
         <el-card style="height:350px;">
           <div slot="header" class="clearfix">
             <span>语言详情</span>
@@ -34,10 +34,44 @@
           <el-progress :percentage="60" color="##7E5BCF"></el-progress>
         </el-card>
       </div>
+      <div class="left-bot-block">
+        <el-card style="height:350px;">
+          <div slot="header" class="clearfix">
+            <span>友情链接</span>
+          </div>
+          <div class="list clearfix">
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">vue官方文档
+            </div>
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">webapck官网
+            </div>
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">react中文网
+            </div>
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">element-ui
+            </div>
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">掘金论坛
+            </div>
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">vue官方文档
+            </div>
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">掘金论坛
+            </div>
+            <div class="item fl">
+              <img src="https://gw.alipayobjects.com/zos/rmsportal/ComBAopevLwENQdKWiIn.png" alt="" width="20">vue官方文档
+            </div>
+          </div>
+
+        </el-card>
+      </div>
     </div>
     <div class="right-block fr">
       <el-card>
-        <div slot="header" class="clearfix">
+        <!-- <div slot="header" class="clearfix">
           <span>优秀开源项目</span>
         </div>
         <div class="tip">
@@ -87,28 +121,48 @@
         </div>
         <div class="tip">
           <a href="https://juejin.im/post/5ba7d5dd5188255c6140cc9d" target="_blank">前端常用插件、工具类库汇总</a>
-        </div>
+        </div> -->
+        <el-tabs v-model="activeName" @tab-click="handleClick">
+          <el-tab-pane label="文章" name="first">
+            <artical></artical>
+          </el-tab-pane>
+          <el-tab-pane label="项目" name="second">配置管理</el-tab-pane>
+          <el-tab-pane label="应用" name="third">角色管理</el-tab-pane>
+        </el-tabs>
       </el-card>
     </div>
   </div>
 </template>
 
 <script>
+import artical from '../../components/artical'
 export default {
-  name: 'adminIndex'
+  name: 'adminIndex',
+  data () {
+    return {
+      activeName: 'first'
+    }
+  },
+  components: { artical },
+  methods: {
+    handleClick () { }
+  }
 }
 </script>
 
 <style scoped lang="scss">
 .mainpage {
   height: calc(100% - 120px);
+  overflow: auto;
 }
 .left-block {
   width: 30%;
-  height: 100%;
+  // background-color: #fff;
+  // height: 100%;
+  // overflow: auto;
 }
 .left-top-block {
-  height: 40%;
+  height: 200px;
   background-color: white;
   padding: 20px;
   padding-left: 120px;
@@ -131,14 +185,30 @@ export default {
     }
   }
 }
+.left-mid-block {
+  margin: 10px 0;
+}
 .left-bot-block {
-  margin-top: 15px;
-  height: 58%;
-  background-color: white;
+  margin: 15px 0;
+  .el-card {
+    height: auto !important;
+  }
+  .item {
+    width: 50%;
+    padding-bottom: 12px;
+    > img {
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
 }
 .right-block {
   width: 68%;
-  height: 100%;
+  // height: 100%;
   background-color: white;
+  .el-card {
+    height: 100%;
+    overflow: auto;
+  }
 }
 </style>

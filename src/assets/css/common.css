@@ -126,5 +126,32 @@ html, body, #app{
   padding: 5px 0;
 }
 
+/* 剩余滚动条样式 */
+
+::-webkit-scrollbar-track-piece {
+  width: 2px;
+  background-color: rgba(255, 255, 255, 1) !important;
+}
+
+/* 整体样式 */
+
+::-webkit-scrollbar {
+  width: 2px;
+  height: 10px;
+}
+
+/* 滑块部分 */
+
+::-webkit-scrollbar-thumb {
+  height: 20px;
+  background: #e9e9e9;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e9e9e9;
+}
+
 
 

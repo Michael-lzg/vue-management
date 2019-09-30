@@ -6,5 +6,5 @@ export default {
 }
 const API = {
   /* 获取验证码 */
-  getValidateCode: '/api/login/getValidateCode',
+  getValidateCode: '/api/login/getValidateCode'
 }
