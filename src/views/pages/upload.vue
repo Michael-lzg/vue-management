@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainPage">
     <div class="tips">vue-cropperjs：一个封装了 cropperjs 的 Vue 组件，支持图片剪裁。 访问地址：
       <a href="https://github.com/Agontuk/vue-cropperjs" target="_blank" class="c1">vue-cropperjs</a>
     </div>

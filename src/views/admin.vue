@@ -56,6 +56,7 @@ export default {
 }
 .content-box {
   height: 100%;
+  height: calc(100% - 60px);
   /* background-color: pink; */
   position: absolute;
   left: 250px;

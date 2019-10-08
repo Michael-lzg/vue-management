@@ -4,8 +4,6 @@
       <div class="title">{{item.title}}</div>
       <div class="tag">
         <el-tag v-for="(v,k) in item.tag" :key="k">{{v}}</el-tag>
-        <!-- <el-tag>webpack</el-tag>
-        <el-tag>javascript</el-tag> -->
       </div>
       <div class="content">{{item.content}}</div>
     </div>

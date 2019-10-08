@@ -1,5 +1,5 @@
 <template>
-  <div class="charts">
+  <div class="charts mainPage">
     <div class="tips">vue-schart：vue.js封装sChart.js的图表组件。 访问地址：
       <a href="https://github.com/lin-xin/vue-schart" target="_blank" class="c1">vue-schart</a>
     </div>
@@ -91,7 +91,7 @@ export default {
   display: inline-block;
   margin-right: 20px;
   margin-bottom: 20px;
-  width: 45%;
+  width: 48%;
 }
 .schart {
   width: 100%;

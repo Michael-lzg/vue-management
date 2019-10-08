@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainPage">
     <div class="tips">导出excel需要安装两个依赖包file-saver xlsx， script-loader
       <el-button type="primary" size='mini' class="" @click="downExcel">导出Excel</el-button>
     </div>

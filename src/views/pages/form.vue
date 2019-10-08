@@ -1,5 +1,5 @@
 <template>
-  <div class="form">
+  <div class="form mainPage">
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item label="活动名称" prop="name" :inline-message="inline">
         <el-input v-model="ruleForm.name"></el-input>
@@ -114,6 +114,7 @@ export default {
 <style lang="scss">
   .form{
     padding-top: 10px;
+    background-color: #fff;
   }
   .el-form{
     width: 600px;

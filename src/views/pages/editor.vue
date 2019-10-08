@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainPage">
     <div class="tips">Vue-Quill-Editor：基于Quill、适用于Vue2的富文本编辑器。 访问地址：
       <a href="https://github.com/surmon-china/vue-quill-editor" target="_blank" class="c1">Vue-Quill-Editor</a>
     </div>

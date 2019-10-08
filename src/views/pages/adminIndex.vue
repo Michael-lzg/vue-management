@@ -126,8 +126,10 @@
           <el-tab-pane label="文章" name="first">
             <artical></artical>
           </el-tab-pane>
-          <el-tab-pane label="项目" name="second">配置管理</el-tab-pane>
-          <el-tab-pane label="应用" name="third">角色管理</el-tab-pane>
+          <el-tab-pane label="项目" name="second">
+            <github></github>
+          </el-tab-pane>
+          <!-- <el-tab-pane label="应用" name="third">角色管理</el-tab-pane> -->
         </el-tabs>
       </el-card>
     </div>
@@ -136,6 +138,7 @@
 
 <script>
 import artical from '../../components/artical'
+import github from '../../components/github'
 export default {
   name: 'adminIndex',
   data () {
@@ -143,7 +146,7 @@ export default {
       activeName: 'first'
     }
   },
-  components: { artical },
+  components: { artical, github },
   methods: {
     handleClick () { }
   }

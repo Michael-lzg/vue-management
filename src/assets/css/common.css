@@ -1,4 +1,6 @@
-html, body, #app{
+html,
+body,
+#app {
   width: 100%;
   height: 100%;
   font-size: 16px;
@@ -7,7 +9,7 @@ html, body, #app{
   -webkit-text-size-adjust: 100%;
 }
 
-.dib{
+.dib {
   display: inline-block;
 }
 
@@ -47,13 +49,14 @@ html, body, #app{
   position: relative;
 }
 
-.por{
+.por {
   position: relative;
 }
 
-.pf{
+.pf {
   position: fixed;
 }
+
 .vm {
   vertical-align: middle;
 }
@@ -81,6 +84,7 @@ html, body, #app{
 }
 
 /*iconfont初始大小*/
+
 .iconfont {
   font-size: 16px;
 }
@@ -94,35 +98,43 @@ html, body, #app{
   visibility: hidden;
 }
 
-.c5{
+.c5 {
   color: #555555 !important;
 }
-.c4{
+
+.c4 {
   color: #40A9FF !important;
 }
-.c8{
-  color:#888 !important;
+
+.c8 {
+  color: #888 !important;
 }
+
 ::-webkit-input-placeholder {
   color: #878D99;
 }
+
 :-moz-placeholder {
   color: #878D99;
 }
+
 ::-moz-placeholder {
   color: #878D99;
 }
+
 :-ms-input-placeholder {
   color: #878D99;
 }
+
 .c1 {
   color: #409EFF !important;
 }
-.bg1{
+
+.bg1 {
   background-color: #409EFF !important;
 }
 
-.tip{
+.tip {
   padding: 5px 0;
 }
 
@@ -153,5 +165,10 @@ html, body, #app{
   background: #e9e9e9;
 }
 
-
-
+.mainPage {
+  height: calc(100% - 60px);
+  width: 100%;
+  background-color: #fff;
+  padding: 15px;
+  overflow: auto;
+}
