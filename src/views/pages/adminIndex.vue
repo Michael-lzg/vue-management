@@ -155,7 +155,7 @@ export default {
 
 <style scoped lang="scss">
 .mainpage {
-  height: calc(100% - 120px);
+  // height: calc(100% - 120px);
   overflow: auto;
 }
 .left-block {
