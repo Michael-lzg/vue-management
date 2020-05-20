@@ -90,28 +90,28 @@ export default {
 </script>
 
 <style scoped lang='scss'>
-.tableList{
+.tableList {
   padding-top: 35px;
   padding-bottom: 40px;
   position: relative;
   background-color: #fff;
   padding-left: 10px;
-  .tip{
+  .tip {
     position: absolute;
     top: 5px;
   }
-  .table{
+  .table {
     margin-top: 10px;
     background-color: pink;
   }
 }
-.pagination{
+.pagination {
   // float:right;
   padding-top: 10px;
 }
-.todoBtn{
+.todoBtn {
   cursor: pointer;
-  color: #4990E2;
+  color: #4990e2;
   margin-right: 10px;
 }
 </style>
