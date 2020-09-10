@@ -16,13 +16,29 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 import { quillEditor } from 'vue-quill-editor'
+// import quillConfig from '../../javascript/videoConfig'
 export default {
   name: 'editor',
   data () {
     return {
       content: '',
+      // editorOption: quillConfig
       editorOption: {
-        placeholder: 'Hello World'
+        placeholder: 'Hello World',
+        // modules: {
+        //   toolbar: {
+        //     container: [
+        //       ...
+        //       ['image', 'video']
+        //     ]
+        //     // handlers: {
+        //     //   ...
+        //     //   'video': function (value) {
+        //     //     self2.videoUploadTag = true;
+        //     //   }
+        //     // }
+        //   }
+        // }
       }
     }
   },
@@ -42,16 +58,16 @@ export default {
 </script>
 
 <style scoped>
-.tips{
+.tips {
   padding: 10px 0;
 }
 
-.editor-btn{
+.editor-btn {
   margin-top: 20px;
 }
 </style>
 <style>
-.ql-editor{
+.ql-editor {
   height: 400px !important;
 }
 </style>
